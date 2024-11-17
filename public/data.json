@@ -4,7 +4,7 @@
       "id": "20230308_1",
       "date": "20230308",
       "name": "키부쿠 AA",
-      "countries": ["케냐"],
+      "countries": [{ "code": "KE", "name": "케냐" }],
       "cupNotes": ["blackberry", "hibiscus", "lemon tea"],
       "roastery": "Three Marks Coffee"
     },
@@ -12,7 +12,7 @@
       "id": "20230315_1",
       "date": "20230315",
       "name": "LA MACARENA",
-      "countries": ["콜롬비아"],
+      "countries": [{ "code": "CO", "name": "콜롬비아" }],
       "cupNotes": ["lychee", "strawberry", "yogurt"],
       "roastery": "페임커피"
     },
@@ -20,7 +20,7 @@
       "id": "20230405_1",
       "date": "20230405",
       "name": "엘 엔칸토 허니 시트러스",
-      "countries": ["콜롬비아"],
+      "countries": [{ "code": "CO", "name": "콜롬비아" }],
       "cupNotes": ["orange peel", "citrus", "mandarin", "lemon grass"],
       "roastery": "피어커피"
     },
@@ -28,7 +28,7 @@
       "id": "20230322_1",
       "date": "20230322",
       "name": "라 글로리에타 게이샤 내추럴",
-      "countries": ["콜롬비아"],
+      "countries": [{ "code": "CO", "name": "콜롬비아" }],
       "cupNotes": ["lavender", "lime", "sugarcane"],
       "roastery": "커피휘엘"
     },
@@ -36,7 +36,7 @@
       "id": "20230412_1",
       "date": "20230412",
       "name": "부산제 버번 워시드",
-      "countries": ["르완다"],
+      "countries": [{ "code": "RW", "name": "르완다" }],
       "cupNotes": ["floral", "red apple", "cherry", "peach", "honey"],
       "roastery": "토치커피"
     },
@@ -44,7 +44,7 @@
       "id": "20230412_2",
       "date": "20230412",
       "name": "라 미니야 무산소 내추럴",
-      "countries": ["코스타리카"],
+      "countries": [{ "code": "CR", "name": "코스타리카" }],
       "cupNotes": ["cinnamon", "ginger apple", "pecan", "orange"],
       "roastery": "토치커피"
     },
@@ -52,7 +52,7 @@
       "id": "20230419_1",
       "date": "20230419",
       "name": "사무엘 데겔로 워시드",
-      "countries": ["에티오피아"],
+      "countries": [{ "code": "ET", "name": "에티오피아" }],
       "cupNotes": ["pineapple", "lemon candy", "peach", "floral"],
       "roastery": "아이덴티티 커피랩"
     },
@@ -60,7 +60,7 @@
       "id": "20230419_2",
       "date": "20230419",
       "name": "핀카 테라자스 이스테이트87 워시드",
-      "countries": ["과테말라"],
+      "countries": [{ "code": "GT", "name": "과테말라" }],
       "cupNotes": ["orange", "apricot", "caramel", "hazelnut"],
       "roastery": "아이덴티티 커피랩"
     },
@@ -68,7 +68,7 @@
       "id": "20230510_1",
       "date": "20230510",
       "name": "타미루&트시게 에티오피아 블렌딩",
-      "countries": ["에티오피아"],
+      "countries": [{ "code": "ET", "name": "에티오피아" }],
       "cupNotes": ["shine-muscat", "green grape candy", "floral", "milk cream"],
       "roastery": "파스텔 커피웍스"
     },
@@ -76,7 +76,10 @@
       "id": "20230517_1",
       "date": "20230517",
       "name": "팔레트 #4 KBrC 블렌드",
-      "countries": ["에티오피아", "볼리비아"],
+      "countries": [
+        { "code": "ET", "name": "에티오피아" },
+        { "code": "BO", "name": "볼리비아" }
+      ],
       "cupNotes": [
         "plum",
         "red apple",
@@ -90,7 +93,7 @@
       "id": "20230524_1",
       "date": "20230524",
       "name": "산 프란시스코 카투라",
-      "countries": ["콜롬비아"],
+      "countries": [{ "code": "CO", "name": "콜롬비아" }],
       "cupNotes": [
         "cherry",
         "green grape",
@@ -104,7 +107,7 @@
       "id": "20230524_2",
       "date": "20230524",
       "name": "산추아리오 버본300",
-      "countries": ["브라질"],
+      "countries": [{ "code": "BR", "name": "브라질" }],
       "cupNotes": [
         "floral",
         "mango",
