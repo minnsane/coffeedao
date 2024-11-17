@@ -1,7 +1,7 @@
+import CardList from './features/CardList';
+
 function App() {
-  return <h1 className="text-3xl font-bold underline">
-  Hello world!
-</h1>;
+  return <CardList />;
 }
 
-export default App
+export default App;
