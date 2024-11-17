@@ -19,9 +19,20 @@ export default function Card({ card }: CardProps) {
   return (
     <>
       {isFlipped ? (
-        <CardDetail card={card} imageUrl={cardImageUrl} />
+        <motion.div
+          initial={{ rotateY: 180 }}
+          transition={{ duration: 0.7 }}
+          animate={{ rotateY: isFlipped ? 180 : 0 }}
+        >
+          <CardDetail card={card} imageUrl={cardImageUrl} />
+        </motion.div>
       ) : (
-        <motion.div whileHover={{ scale: 1.2 }} onClick={handleClick}>
+        <motion.div
+          whileHover={{ scale: 1.2 }}
+          onClick={handleClick}
+          transition={{ duration: 0.7 }}
+          animate={{ rotateY: isFlipped ? 180 : 0 }}
+        >
           <img
             className="rounded-lg shadow-xl shadow-yellow-700 border-orange-900 border-4"
             src={cardImageUrl}
