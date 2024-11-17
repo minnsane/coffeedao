@@ -25,8 +25,8 @@ export default function CardList() {
 
   return (
     <>
-      <div className="container mx-auto">
-        <div className="grid grid-cols-3 gap-4">
+      <div className="container mx-auto mt-20">
+        <div className="grid grid-cols-4 gap-20">
           {cards.map((card) => (
             <Card key={card.id} card={card} />
           ))}

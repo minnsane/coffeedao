@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
 import { CardType } from '../utils/type';
+import { motion } from 'framer-motion';
 
 type CardProps = {
   card: CardType;
@@ -11,8 +11,11 @@ const getImageUrl = (id: string): string => {
 
 export default function Card({ card }: CardProps) {
   return (
-    <div>
-      <img src={getImageUrl(card.id)} />
-    </div>
+    <motion.div whileHover={{ scale: 1.2 }}>
+      <img
+        className="rounded-lg shadow-xl shadow-yellow-700 border-orange-900 border-4"
+        src={getImageUrl(card.id)}
+      />
+    </motion.div>
   );
 }
