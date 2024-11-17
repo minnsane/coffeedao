@@ -44,7 +44,9 @@ export default function Card({ card }: CardProps) {
       >
         <img src={cardImageUrl} />
       </motion.div>
-      {isCardDetailActive && <CardDetail card={card} />}
+      {isCardDetailActive && (
+        <CardDetail card={card} onCardDetailClick={handleClick} />
+      )}
     </div>
   );
 }
