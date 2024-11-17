@@ -1,7 +1,7 @@
 import { CardType } from '../utils/type';
 import { motion } from 'framer-motion';
 import CardDetail from './CardDetail';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 type CardProps = {
   card: CardType;
@@ -9,15 +9,32 @@ type CardProps = {
 
 export default function Card({ card }: CardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
+  const [isCardDetailActive, setIsCardDetailActive] = useState(false);
 
   const cardImageUrl = `http://localhost:5173/assets/cards/${card.id}.webp`;
 
   const handleClick = () => {
+    console.log('click');
+
     setIsFlipped((curr) => !curr);
   };
 
+  useEffect(() => {
+    if (!isFlipped) {
+      setIsCardDetailActive(false);
+
+      return;
+    }
+
+    const timeout = setTimeout(() => {
+      setIsCardDetailActive(true);
+    }, 500);
+
+    return () => clearTimeout(timeout);
+  }, [isFlipped]);
+
   return (
-    <div className="cursor-pointer">
+    <div className="relative cursor-pointer">
       <motion.div
         className="rounded-lg shadow-xl shadow-yellow-700 border-orange-900 border-4"
         whileHover={isFlipped ? undefined : { scale: 1.2 }}
@@ -27,6 +44,7 @@ export default function Card({ card }: CardProps) {
       >
         <img src={cardImageUrl} />
       </motion.div>
+      {isCardDetailActive && <CardDetail card={card} />}
     </div>
   );
 }
