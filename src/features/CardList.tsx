@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { Card } from '../utils/type';
+import { CardType } from '../utils/type';
+import Card from './Card';
 
-function CardList() {
-  const [cards, setCards] = useState<Card[]>([]);
+export default function CardList() {
+  const [cards, setCards] = useState<CardType[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,13 +25,13 @@ function CardList() {
 
   return (
     <>
-      <div className="container mx-auto columns-3">
-        {cards.map((card) => (
-          <h1>{card.name}</h1>
-        ))}
+      <div className="container mx-auto">
+        <div className="grid grid-cols-3 gap-4">
+          {cards.map((card) => (
+            <Card key={card.id} card={card} />
+          ))}
+        </div>
       </div>
     </>
   );
 }
-
-export default CardList;
