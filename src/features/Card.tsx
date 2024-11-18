@@ -9,7 +9,6 @@ type CardProps = {
 
 export default function Card({ card }: CardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
-  const [isCardDetailActive, setIsCardDetailActive] = useState(false);
 
   const cardImageUrl = `http://localhost:5173/assets/cards/${card.id}.webp`;
 
@@ -18,20 +17,6 @@ export default function Card({ card }: CardProps) {
 
     setIsFlipped((curr) => !curr);
   };
-
-  useEffect(() => {
-    if (!isFlipped) {
-      setIsCardDetailActive(false);
-
-      return;
-    }
-
-    const timeout = setTimeout(() => {
-      setIsCardDetailActive(true);
-    }, 500);
-
-    return () => clearTimeout(timeout);
-  }, [isFlipped]);
 
   return (
     <div className="relative cursor-pointer">
@@ -44,9 +29,7 @@ export default function Card({ card }: CardProps) {
       >
         <img src={cardImageUrl} />
       </motion.div>
-      {isCardDetailActive && (
-        <CardDetail card={card} onCardDetailClick={handleClick} />
-      )}
+      {isFlipped && <CardDetail card={card} onCardDetailClick={handleClick} />}
     </div>
   );
 }
