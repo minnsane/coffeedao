@@ -33,12 +33,8 @@ export default function CardDetail({
   return (
     <>
       {isCardDetailDisplayed && (
-        <>
-          {' '}
-          <div
-            className="absolute bg-black/70 inset-[2px] blur-sm shadow-sm"
-            onClick={onCardDetailClick}
-          ></div>
+        <div onClick={onCardDetailClick}>
+          <div className="absolute bg-black/70 inset-[2px] blur-sm shadow-sm"></div>
           <div className="absolute inset-10">
             <div className="grid grid-cols-3 gap-2">
               {card.countries.map((country) => (
@@ -50,11 +46,13 @@ export default function CardDetail({
             </div>
 
             <ul className="text-zinc-100">
+              <li className="pb-1">{card.date}</li>
               <li className="pb-1">{card.name}</li>
               <li className="pb-1">{card.roastery}</li>
+              <li className="pb-1">{card.cupNotes.join(', ')}</li>
             </ul>
           </div>
-        </>
+        </div>
       )}
     </>
   );
