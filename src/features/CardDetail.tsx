@@ -15,11 +15,21 @@ export default function CardDetail({
         className="absolute bg-black/70 inset-[2px] blur-sm shadow-sm"
         onClick={onCardDetailClick}
       ></div>
+      <div className="absolute inset-10">
+        <div className="grid grid-cols-3 gap-2">
+          {card.countries.map((country) => (
+            <img
+              key={country.code}
+              src={`https://flagsapi.com/${country.code}/flat/64.png`}
+            />
+          ))}
+        </div>
 
-      <ul className="absolute top-10 left-10 text-zinc-100">
-        <li className="pb-1">{card.name}</li>
-        <li className="pb-1">{card.roastery}</li>
-      </ul>
+        <ul className="text-zinc-100">
+          <li className="pb-1">{card.name}</li>
+          <li className="pb-1">{card.roastery}</li>
+        </ul>
+      </div>
     </>
   );
 }
