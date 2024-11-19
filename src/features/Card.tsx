@@ -1,7 +1,7 @@
 import { CardType } from '../utils/type';
 import { motion } from 'framer-motion';
 import CardDetail from './CardDetail';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 type CardProps = {
   card: CardType;
@@ -13,8 +13,6 @@ export default function Card({ card }: CardProps) {
   const cardImageUrl = `http://localhost:5173/assets/cards/${card.id}.webp`;
 
   const handleClick = () => {
-    console.log('click');
-
     setIsFlipped((curr) => !curr);
   };
 
