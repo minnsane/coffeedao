@@ -7,7 +7,7 @@ export default function CardList() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('http://localhost:5173/data.json');
+      const response = await fetch('/data.json');
 
       if (!response.ok) {
         setCards([]);

@@ -10,7 +10,7 @@ type CardProps = {
 export default function Card({ card }: CardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
 
-  const cardImageUrl = `http://localhost:5173/assets/cards/${card.id}.webp`;
+  const cardImageUrl = `/assets/cards/${card.id}.webp`;
 
   const handleClick = () => {
     setIsFlipped((curr) => !curr);
