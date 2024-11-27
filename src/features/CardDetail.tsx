@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { CardType } from '../utils/type';
+import LikeButton from './LikeButton';
 
 type CardDetailProps = {
   card: CardType;
@@ -36,7 +37,8 @@ export default function CardDetail({
         <div onClick={onCardDetailClick}>
           <div className="absolute bg-black/70 inset-[2px] blur-sm shadow-sm"></div>
           <div className="absolute inset-10">
-            <div className="grid grid-cols-3 gap-2">
+            <LikeButton cardId={card.id} />
+            <div className="grid grid-cols-3 gap-2 mt-16">
               {card.countries.map((country) => (
                 <img
                   key={country.code}
